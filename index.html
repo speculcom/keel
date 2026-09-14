@@ -1,0 +1,261 @@
+<!DOCTYPE html>
+<html lang="zh-CN">
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+  <title>龙骨 Keel — 开源网页游戏基座 | Keel 3D · Keel 2D</title>
+  <meta name="description" content="龙骨 Keel：Specul 开源网页游戏基座。Keel 3D（WebGPU）与 Keel 2D，在线演示与上手。" />
+  <link rel="canonical" href="https://keel.specul.com" />
+  <meta property="og:type" content="website" />
+  <meta property="og:url" content="https://keel.specul.com" />
+  <meta property="og:title" content="龙骨 Keel — 开源网页游戏基座" />
+  <meta property="og:description" content="Keel 3D（WebGPU）与 Keel 2D · 在线演示 · 开源" />
+  <link rel="icon" type="image/svg+xml" href="data:image/svg+xml,%3Csvg xmlns='http://www.w3.org/2000/svg' viewBox='0 0 48 48'%3E%3Cdefs%3E%3ClinearGradient id='g' x1='0' y1='0' x2='1' y2='1'%3E%3Cstop offset='0' stop-color='%238b7cf8'/%3E%3Cstop offset='1' stop-color='%2322d3c5'/%3E%3C/linearGradient%3E%3C/defs%3E%3Crect width='48' height='48' rx='12' fill='%2305080f'/%3E%3Ctext x='24' y='32' text-anchor='middle' font-size='22' fill='url(%23g)' font-family='system-ui'>K</text>%3C/svg%3E" />
+  <style>
+    :root {
+      --bg: #05080f; --bg2: #0a101c;
+      --panel: rgba(16, 24, 40, .72);
+      --line: rgba(148, 163, 184, .14);
+      --ink: #f4f7fb; --dim: #94a3b8;
+      --vio: #8b7cf8; --cyan: #22d3c5; --gold: #f5c542;
+    }
+    * { box-sizing: border-box; margin: 0; padding: 0; }
+    html { scroll-behavior: smooth; }
+    body {
+      font-family: "Segoe UI", "PingFang SC", "Microsoft YaHei", "Noto Sans SC", system-ui, sans-serif;
+      background: var(--bg); color: var(--ink); line-height: 1.7;
+      -webkit-font-smoothing: antialiased;
+    }
+    a { color: inherit; text-decoration: none; }
+    .wrap { width: min(1040px, 92vw); margin: 0 auto; }
+    body::before {
+      content: ""; position: fixed; inset: 0; pointer-events: none; z-index: 0;
+      background:
+        radial-gradient(900px 480px at 15% -10%, rgba(139,124,248,.2), transparent 55%),
+        radial-gradient(700px 400px at 85% 10%, rgba(34,211,197,.1), transparent 50%),
+        linear-gradient(180deg, #080d18 0%, var(--bg) 50%, #04070d 100%);
+    }
+    header, main, footer { position: relative; z-index: 1; }
+    header {
+      position: sticky; top: 0; z-index: 40;
+      border-bottom: 1px solid var(--line);
+      background: rgba(5,8,15,.78); backdrop-filter: blur(14px);
+    }
+    .bar { display: flex; align-items: center; justify-content: space-between; padding: 14px 0; gap: 12px; }
+    .mark { display: flex; align-items: center; gap: 10px; font-weight: 700; letter-spacing: .12em; font-size: 15px; }
+    .mark:hover { text-decoration: none; }
+    .mark .dot {
+      width: 10px; height: 10px; border-radius: 50%;
+      background: linear-gradient(135deg, var(--vio), var(--cyan));
+      box-shadow: 0 0 16px rgba(34,211,197,.55);
+    }
+    .mark span.sub { color: var(--dim); font-weight: 500; letter-spacing: .16em; font-size: 12px; }
+    nav.links { display: flex; gap: 18px; align-items: center; font-size: 13px; flex-wrap: wrap; }
+    nav.links a { color: var(--dim); }
+    nav.links a:hover { color: var(--ink); }
+    .lang {
+      border: 1px solid var(--line); background: transparent; color: var(--dim);
+      border-radius: 999px; padding: 5px 12px; font-size: 12px; cursor: pointer;
+    }
+    .lang:hover { color: var(--ink); border-color: rgba(34,211,197,.5); }
+    .hero { padding: 72px 0 48px; }
+    .kicker { font-size: 12px; letter-spacing: .2em; text-transform: uppercase; color: var(--cyan); margin-bottom: 14px; }
+    h1 {
+      font-size: clamp(34px, 6vw, 52px); font-weight: 800; letter-spacing: -.02em; line-height: 1.15;
+      margin-bottom: 14px;
+    }
+    h1 .grad {
+      background: linear-gradient(100deg, #c4b5fd, #67e8f9);
+      -webkit-background-clip: text; background-clip: text; color: transparent;
+    }
+    .lead { color: var(--dim); font-size: 15px; max-width: 38em; margin-bottom: 28px; }
+    .cta { display: flex; flex-wrap: wrap; gap: 12px; }
+    .btn {
+      display: inline-flex; align-items: center; padding: 11px 18px; border-radius: 999px;
+      font-size: 14px; font-weight: 600; border: 1px solid var(--line); color: var(--ink);
+      transition: border-color .15s, transform .15s;
+    }
+    .btn:hover { border-color: rgba(34,211,197,.55); transform: translateY(-1px); text-decoration: none; }
+    .btn.pri { border: none; color: #061018; background: linear-gradient(135deg, #a78bfa, #22d3c5); }
+    section { padding: 44px 0; border-top: 1px solid var(--line); }
+    .sec-label { font-size: 11px; letter-spacing: .2em; text-transform: uppercase; color: var(--dim); margin-bottom: 12px; }
+    h2 { font-size: clamp(20px, 3vw, 26px); font-weight: 700; margin-bottom: 18px; }
+    .grid { display: grid; grid-template-columns: repeat(auto-fit, minmax(260px, 1fr)); gap: 14px; }
+    .card {
+      background: var(--panel); border: 1px solid var(--line); border-radius: 16px; padding: 22px;
+    }
+    .card h3 { font-size: 18px; margin-bottom: 8px; }
+    .card p { font-size: 14px; color: var(--dim); margin-bottom: 14px; }
+    .tag {
+      display: inline-block; font-size: 11px; color: var(--gold);
+      border: 1px solid var(--line); border-radius: 999px; padding: 2px 10px; margin: 0 6px 8px 0;
+    }
+    .list { list-style: none; color: var(--dim); font-size: 14px; }
+    .list li { padding: 8px 0; border-bottom: 1px solid var(--line); }
+    footer { border-top: 1px solid var(--line); padding: 28px 0 48px; color: var(--dim); font-size: 13px; }
+    footer .row { display: flex; flex-wrap: wrap; gap: 12px; justify-content: space-between; }
+    [data-en] { display: none; }
+    html[lang="en"] [data-zh] { display: none; }
+    html[lang="en"] [data-en] { display: revert; }
+    html[lang="en"] p[data-en], html[lang="en"] .lead[data-en],
+    html[lang="en"] h1[data-en], html[lang="en"] h2[data-en], html[lang="en"] h3[data-en],
+    html[lang="en"] li[data-en] { display: block; }
+  [data-theme="light"]{--bg:#f4f7fb;--panel:#fff;--line:rgba(15,23,42,.12);--ink:#0f172a;--dim:#5b6b82;}[data-theme="light"]body::before{background:linear-gradient(180deg,#eef3fa,#f7fafc);}[data-theme="light"]header{background:rgba(247,250,252,.9);}</style>
+</head>
+<body>
+  <header>
+    <div class="wrap bar">
+      <a class="mark" href="./" title="Keel">
+        <span class="dot" aria-hidden="true"></span>
+        KEEL
+        <span class="sub" id="markSub">龙骨 · 游戏基座</span>
+      </a>
+      <nav class="links">
+        <a href="https://specul.com">
+          <span data-zh>← Specul 首页</span><span data-en>← Specul home</span>
+        </a>
+        <a href="./3d/hub.html">
+          <span data-zh>3D 演示</span><span data-en>3D demos</span>
+        </a>
+        <a href="#products">
+          <span data-zh>产品</span><span data-en>Products</span>
+        </a>
+        <button class="lang" id="themeBtn" type="button" aria-label="Theme">☾</button>
+        <button class="lang" id="langBtn" type="button">EN</button>
+      </nav>
+    </div>
+  </header>
+
+  <main>
+    <div class="wrap hero">
+      <div class="kicker" data-zh>Specul · 龙骨 Keel</div>
+      <div class="kicker" data-en>Specul · Keel</div>
+      <h1 data-zh><span class="grad">龙骨 Keel</span><br />开源网页游戏基座</h1>
+      <h1 data-en><span class="grad">Keel</span><br />Open web game framework</h1>
+      <p class="lead" data-zh>
+        Keel 是 Specul 旗下的开源游戏基座：Keel 3D（WebGPU）与 Keel 2D。
+        选骨架、改数据、拼积木，快速做出浏览器里的 2D / 3D 游戏。
+      </p>
+      <p class="lead" data-en>
+        Keel is Specul’s open game framework: Keel 3D (WebGPU) and Keel 2D.
+        Pick a skeleton, tweak data, compose blocks—ship browser games faster.
+      </p>
+      <div class="cta">
+        <a class="btn pri" href="./3d/hub.html">
+          <span data-zh>3D 在线演示</span><span data-en>3D live demos</span>
+        </a>
+        <a class="btn" href="https://specul.com">
+          <span data-zh>回到 Specul</span><span data-en>Back to Specul</span>
+        </a>
+      </div>
+    </div>
+
+    <section id="products">
+      <div class="wrap">
+        <div class="sec-label">01 — <span data-zh>产品</span><span data-en>Products</span></div>
+        <h2 data-zh>两代基座</h2>
+        <h2 data-en>Two bases</h2>
+        <div class="grid">
+          <div class="card">
+            <div><span class="tag">WebGPU</span><span class="tag">MIT</span></div>
+            <h3 data-zh>Keel 3D</h3><h3 data-en>Keel 3D</h3>
+            <p data-zh>FPS / 塔防 / Roguelike / TPS / 潜行等 20+ 品类骨架，按需 import 积木。</p>
+            <p data-en>20+ genre skeletons—FPS, tower defense, roguelike, TPS, stealth—with composable blocks.</p>
+            <a class="btn pri" href="./3d/hub.html" style="padding:8px 14px;font-size:13px">
+              <span data-zh>打开演示</span><span data-en>Open demos</span>
+            </a>
+          </div>
+          <div class="card">
+            <div><span class="tag"><span data-zh>规划中</span><span data-en>Planned</span></span></div>
+            <h3 data-zh>Keel 2D</h3><h3 data-en>Keel 2D</h3>
+            <p data-zh>二维基座，与 Keel 3D 同品牌、同一演示门户。</p>
+            <p data-en>The 2D sibling of Keel 3D, same brand and portal.</p>
+          </div>
+        </div>
+      </div>
+    </section>
+
+    <section>
+      <div class="wrap">
+        <div class="sec-label">02 — <span data-zh>快速入口</span><span data-en>Quick links</span></div>
+        <h2 data-zh>Keel 3D 从这里开始</h2>
+        <h2 data-en>Start with Keel 3D</h2>
+        <ul class="list">
+          <li data-zh>🗡️ <a href="./3d/roguelike.html">Roguelike 旗舰</a> — 清房打 Boss 可通关</li>
+          <li data-en>🗡️ <a href="./3d/roguelike.html">Roguelike flagship</a> — clear rooms, beat the boss</li>
+          <li data-zh>⚔️ <a href="./3d/arpg.html">ARPG</a> — 击杀 12 · <a href="./3d/tower.html">塔防</a> — 守 180 秒</li>
+          <li data-en>⚔️ <a href="./3d/arpg.html">ARPG</a> — 12 kills · <a href="./3d/tower.html">TD</a> — hold 180s</li>
+          <li data-zh>✨ <a href="./3d/collect.html">收集</a> 60s · <a href="./3d/platformer.html">平台</a> 3 命登顶 · <a href="./3d/tps.html">TPS</a> 击杀 12</li>
+          <li data-en>✨ <a href="./3d/collect.html">Collect</a> 60s · <a href="./3d/platformer.html">Platformer</a> · <a href="./3d/tps.html">TPS</a> 12 kills</li>
+          <li data-zh>🗺️ <a href="./3d/hub.html">全部骨架与玩法说明</a></li>
+          <li data-en>🗺️ <a href="./3d/hub.html">All skeletons &amp; how to play</a></li>
+        </ul>
+      </div>
+    </section>
+
+    <section>
+      <div class="wrap">
+        <div class="sec-label">03 — <span data-zh>技术底线</span><span data-en>Constraints</span></div>
+        <h2 data-zh>WebGPU-only</h2>
+        <h2 data-en>WebGPU-only</h2>
+        <ul class="list">
+          <li data-zh>Keel 3D 仅支持 WebGPU（Chrome / Edge 新版，Safari 17+），不向后兼容 WebGL</li>
+          <li data-en>Keel 3D is WebGPU-only (recent Chrome / Edge, Safari 17+). No WebGL fallback.</li>
+          <li data-zh>代码许可 MIT；第三方素材见源码仓库声明</li>
+          <li data-en>Code under MIT; third-party assets noted in the source repo.</li>
+          <li data-zh>品牌站：<a href="https://specul.com/legal.html"><span data-zh>法律条款</span><span data-en>Legal</span></a>
+        ·
+        <a href="https://specul.com">specul.com</a> 投机 · 推演</li>
+          <li data-en>Brand: <a href="https://specul.com">specul.com</a></li>
+        </ul>
+      </div>
+    </section>
+  </main>
+
+  <footer>
+    <div class="wrap row">
+      <div>
+        <div>© Specul · Keel</div>
+        <div style="max-width:48em;margin-top:8px;color:var(--dim);font-size:12px">
+          <details>
+            <summary><span data-zh>版权与免责声明</span><span data-en>Copyright &amp; disclaimer</span></summary>
+            <p data-zh style="margin-top:8px">
+              本站演示 Keel 框架能力，代码许可以仓库 MIT 声明为准；演示中可能使用占位或第三方素材，权利归原作者。
+              演示不构成任何服务承诺。使用本站即表示你已阅读并同意本条款。
+            </p>
+            <p data-en style="margin-top:8px">
+              This site demos the Keel framework. Code is MIT per the repo; demo assets may be placeholders or third-party.
+              Demos are not a service commitment. By using this site you accept these terms.
+            </p>
+          </details>
+        </div>
+      </div>
+      <div>
+        <a href="https://specul.com">specul.com</a>
+        ·
+        <a href="./3d/hub.html"><span data-zh>演示</span><span data-en>Demos</span></a>
+      </div>
+    </div>
+  </footer>
+
+  <script>
+    (function () {
+      var btn = document.getElementById('langBtn');
+      var sub = document.getElementById('markSub');
+      function apply(lang) {
+        var en = lang === 'en';
+        document.documentElement.lang = en ? 'en' : 'zh-CN';
+        btn.textContent = en ? '中文' : 'EN';
+        sub.textContent = en ? 'game framework' : '龙骨 · 游戏基座';
+        try { localStorage.setItem('specul-lang', en ? 'en' : 'zh'); } catch (e) {}
+      }
+      var init = 'zh';
+      try { init = localStorage.getItem('specul-lang') || 'zh'; } catch (e) {}
+      apply(init);
+      btn.addEventListener('click', function () {
+        apply(document.documentElement.lang === 'en' ? 'zh' : 'en');
+      });
+    })();
+  </script>
+<script>(function(){var tb=document.getElementById('themeBtn');function a(t){var l=t==='light';if(l)document.documentElement.setAttribute('data-theme','light');else document.documentElement.removeAttribute('data-theme');if(tb)tb.textContent=l?'☀':'☾';try{localStorage.setItem('specul-theme',l?'light':'dark')}catch(e){}}var th='dark';try{th=localStorage.getItem('specul-theme')||'dark'}catch(e){}a(th);if(tb)tb.addEventListener('click',function(){a(document.documentElement.getAttribute('data-theme')==='light'?'dark':'light')})})();</script></body>
+</html>
