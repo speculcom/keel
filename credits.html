@@ -1,0 +1,416 @@
+<!DOCTYPE html>
+<html lang="zh-CN">
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+  <title>素材与致谢 · 许可清单 — 龙骨 Keel | Credits &amp; Licensing</title>
+  <meta name="description" content="龙骨 Keel 在线演示的第三方素材清单与必需署名：音频、3D 模型、纹理、开源组件的作者、来源与许可。" />
+  <link rel="canonical" href="https://keel.specul.com/credits.html" />
+  <meta property="og:type" content="website" />
+  <meta property="og:site_name" content="龙骨 Keel" />
+  <meta property="og:url" content="https://keel.specul.com/credits.html" />
+  <meta property="og:title" content="素材与致谢 — 龙骨 Keel" />
+  <meta property="og:description" content="在线演示的第三方素材清单与必需署名。" />
+  <link rel="icon" type="image/svg+xml" href="data:image/svg+xml,%3Csvg xmlns='http://www.w3.org/2000/svg' viewBox='0 0 48 48'%3E%3Cdefs%3E%3ClinearGradient id='g' x1='0' y1='0' x2='1' y2='1'%3E%3Cstop offset='0' stop-color='%238b7cf8'/%3E%3Cstop offset='1' stop-color='%2322d3c5'/%3E%3C/linearGradient%3E%3C/defs%3E%3Crect width='48' height='48' rx='12' fill='%2305080f'/%3E%3Cpath d='M14 32 L24 12 L34 32' fill='none' stroke='url(%23g)' stroke-width='2.4' stroke-linejoin='round'/%3E%3Ccircle cx='24' cy='27' r='2.4' fill='%2322d3c5'/%3E%3C/svg%3E" />
+  <link rel="stylesheet" href="brand.css" />
+  <style>
+    .head { padding: 56px 0 8px; }
+    .head h1 { font-size: clamp(28px, 5vw, 40px); font-weight: 800; letter-spacing: -.02em; }
+    .head .sub { color: var(--dim); font-size: 13px; margin-top: 8px; max-width: 46em; }
+
+    main section { padding: 30px 0; border-top: 1px solid var(--line); }
+    main section:first-of-type { border-top: none; }
+    h2 { font-size: clamp(17px, 2.4vw, 20px); font-weight: 700; margin-bottom: 12px; scroll-margin-top: 90px; }
+    h3 { font-size: 14px; font-weight: 650; margin: 18px 0 8px; }
+    p, li { font-size: 14px; color: var(--dim); }
+    p { margin-bottom: 10px; }
+    ul { margin: 0 0 12px 1.3em; }
+    li { margin-bottom: 6px; }
+    strong { color: var(--ink); font-weight: 650; }
+    code {
+      font-family: var(--mono); font-size: 12.5px;
+      background: rgba(148,163,184,.12); border-radius: 4px; padding: 1px 5px; color: var(--ink);
+    }
+
+    .tbl-wrap { overflow-x: auto; margin: 12px 0 16px; }
+    table { border-collapse: collapse; width: 100%; font-size: 12.5px; min-width: 640px; }
+    th, td { border: 1px solid var(--line); padding: 8px 10px; text-align: left; vertical-align: top; }
+    th { background: rgba(148,163,184,.1); color: var(--ink); font-weight: 650; white-space: nowrap; }
+    td { color: var(--dim); }
+    td strong { color: var(--ink); }
+    .tag-lic {
+      display: inline-block; font-size: 10.5px; padding: 1px 7px; border-radius: 999px;
+      border: 1px solid var(--line); white-space: nowrap;
+    }
+    .lic-cc0 { color: var(--cyan); }
+    .lic-cb  { color: var(--gold); }
+    .lic-sa  { color: var(--warn); }
+    .lic-mit { color: var(--vio); }
+
+    blockquote.attr {
+      margin: 12px 0; padding: 14px 16px;
+      background: var(--panel); border: 1px solid var(--line); border-left: 3px solid var(--gold);
+      border-radius: 10px; font-family: var(--mono); font-size: 12.5px;
+      color: var(--dim); line-height: 1.65;
+    }
+    blockquote.attr p { font-size: 12.5px; margin-bottom: 10px; }
+    blockquote.attr p:last-child { margin-bottom: 0; }
+
+    .card-note {
+      background: var(--panel); border: 1px solid var(--line); border-left: 3px solid var(--cyan);
+      border-radius: 12px; padding: 16px 18px; margin: 14px 0;
+    }
+    .card-note.warn { border-left-color: var(--warn); }
+    .card-note p:last-child { margin-bottom: 0; }
+  </style>
+</head>
+<body class="brand-ambient">
+
+  <header class="site-header">
+    <div class="container site-bar">
+      <a class="brand" href="./" title="龙骨 Keel">
+        <span class="brand-dot" aria-hidden="true"></span>
+        <span class="brand-name">KEEL</span>
+        <span class="brand-sub" id="markSub"
+              data-zh-sub="龙骨 · 游戏基座" data-en-sub="game framework">龙骨 · 游戏基座</span>
+      </a>
+      <nav class="nav-links" aria-label="站点导航">
+        <a href="https://specul.com/"><span data-zh>首页</span><span data-en>Home</span></a>
+        <a href="https://specul.com/nav.html"><span data-zh>导航</span><span data-en>Directory</span></a>
+        <a href="./"><span data-zh>龙骨 Keel</span><span data-en>Keel</span></a>
+        <a href="./3d/hub.html"><span data-zh>3D 演示</span><span data-en>3D demos</span></a>
+        <a href="https://specul.com/legal.html"><span data-zh>法律</span><span data-en>Legal</span></a>
+        <button class="icon-btn" id="themeBtn" type="button" aria-label="切换明暗主题">☾</button>
+        <button class="icon-btn" id="langBtn" type="button" aria-label="Switch language">EN</button>
+      </nav>
+    </div>
+  </header>
+
+  <main class="container">
+    <div class="head">
+      <h1 data-zh>素材与致谢</h1>
+      <h1 data-en>Credits &amp; Licensing</h1>
+      <p class="sub" data-zh>
+        龙骨 Keel 在线演示（keel.specul.com/3d/）随构建分发的音频、3D 模型与纹理来自开放素材库。
+        本页逐项列出<strong>作者、来源与许可</strong>，并给出 CC-BY 系列许可要求的<strong>必需署名全文</strong>。
+        网站条款见 <a href="https://specul.com/legal.html">specul.com/legal.html</a>。
+      </p>
+      <p class="sub" data-en>
+        Audio, 3D models and textures shipped with the Keel 3D demos come from open asset libraries.
+        This page itemises author, source and licence, and reproduces the mandatory attributions required by CC-BY licences.
+        Site terms: <a href="https://specul.com/legal.html">specul.com/legal.html</a>.
+      </p>
+    </div>
+
+    <!-- 1 -->
+    <section id="own">
+      <h2 data-zh>一、属于我们自己的部分（无第三方权利）</h2>
+      <h2 data-en>1. Our own work (no third-party rights)</h2>
+      <ul data-zh>
+        <li><strong>框架与全部骨架 / 积木 / 配方源代码</strong> —— 由 Specul 编写，以 <strong>MIT</strong> 发布（仓库根目录 <code>LICENSE</code>）。</li>
+        <li><strong>中文播报语音 15 条</strong>（<code>audio/sfx/voice_cn/</code>）—— 本项目在 Windows 平台用本地 TTS「Huihui」合成。</li>
+        <li><strong>配方通用音效 9 条</strong>（<code>audio/kit/</code>）—— 由仓库脚本 <code>scripts/gen-sfx.mjs</code> 程序化合成，MIT。</li>
+        <li><strong>站点页面</strong>（本页与 keel.specul.com 其它页面）的 HTML / CSS / JS —— 由 Specul 编写。</li>
+      </ul>
+      <ul data-en>
+        <li><strong>Framework and all skeleton / block / recipe source code</strong> — by Specul, released under <strong>MIT</strong>.</li>
+        <li><strong>15 Chinese announcer lines</strong> — synthesised locally with Windows TTS.</li>
+        <li><strong>9 procedural kit SFX</strong> — generated by <code>scripts/gen-sfx.mjs</code>, MIT.</li>
+        <li><strong>Site pages</strong> — written by Specul.</li>
+      </ul>
+      <div class="card-note">
+        <p data-zh>换句话说：<strong>代码完全干净</strong>（MIT，可自由商用），需要署名的只有下面第二节列出的 CC-BY / CC-BY-SA 素材。</p>
+        <p data-en>In short: the <strong>code is clean</strong> (MIT, commercially usable); the only attribution duties come from the CC-BY / CC-BY-SA assets in section 2.</p>
+      </div>
+    </section>
+
+    <!-- 2 -->
+    <section id="required">
+      <h2 data-zh>二、必需的第三方署名（请原样保留）</h2>
+      <h2 data-en>2. Required attributions (keep verbatim)</h2>
+      <blockquote class="attr">
+        <p>Gun sounds by <strong>Vincent Sevedge</strong>, licensed under Creative Commons Attribution 3.0 Unported.<br />
+        http://creativecommons.org/licenses/by/3.0/</p>
+        <p>"Radio Soldier" announcer lines by <strong>SoundBiterSFX</strong>, licensed under Creative Commons<br />
+        Attribution-ShareAlike 4.0. http://creativecommons.org/licenses/by-sa/4.0/</p>
+        <p>Soldier voice acting from OpenGameArt (user "<strong>Bigz1983</strong>"), CC-BY 3.0.</p>
+        <p>"Crypto" and "Long Note Two" by <strong>Kevin MacLeod</strong> (incompetech.com), licensed under<br />
+        Creative Commons: By Attribution 4.0. http://creativecommons.org/licenses/by/4.0/</p>
+        <p>three.js, Rapier, Draco, Basis Universal transcoder — see their respective licences (MIT / Apache-2.0).</p>
+      </blockquote>
+      <p data-zh>
+        同一段文本也展示在游戏内「操作说明 → 素材与致谢」。
+      </p>
+      <p data-en>The same text appears in-game under “Help → Credits”.</p>
+    </section>
+
+    <!-- 3 -->
+    <section id="audio">
+      <h2 data-zh>三、音频清单</h2>
+      <h2 data-en>3. Audio register</h2>
+      <div class="tbl-wrap">
+        <table>
+          <thead>
+            <tr>
+              <th><span data-zh>文件 / 分组</span><span data-en>Files</span></th>
+              <th><span data-zh>内容</span><span data-en>Content</span></th>
+              <th><span data-zh>作者 / 来源</span><span data-en>Author / source</span></th>
+              <th><span data-zh>许可</span><span data-en>Licence</span></th>
+            </tr>
+          </thead>
+          <tbody>
+            <tr>
+              <td><code>audio/music/menu.mp3</code></td>
+              <td><span data-zh>菜单音乐</span><span data-en>Menu music</span></td>
+              <td>Kenney · kenney.nl</td>
+              <td><span class="tag-lic lic-cc0">CC0 1.0</span></td>
+            </tr>
+            <tr>
+              <td><code>audio/music/layer_battle.mp3</code></td>
+              <td><span data-zh>战斗层 BGM（"Open Warfare"）</span><span data-en>Battle layer (“Open Warfare”)</span></td>
+              <td>Ruskerdax · OpenGameArt</td>
+              <td><span class="tag-lic lic-cc0">CC0 1.0</span></td>
+            </tr>
+            <tr>
+              <td><code>audio/music/layer_tense.mp3</code></td>
+              <td><span data-zh>紧张层 BGM（"Crypto"）</span><span data-en>Tense layer (“Crypto”)</span></td>
+              <td>Kevin MacLeod · incompetech.com</td>
+              <td><span class="tag-lic lic-cb">CC-BY 4.0</span></td>
+            </tr>
+            <tr>
+              <td><code>audio/music/layer_calm.mp3</code></td>
+              <td><span data-zh>平静层 BGM（"Long Note Two"）</span><span data-en>Calm layer (“Long Note Two”)</span></td>
+              <td>Kevin MacLeod · incompetech.com</td>
+              <td><span class="tag-lic lic-cb">CC-BY 4.0</span></td>
+            </tr>
+            <tr>
+              <td><code>audio/music/jingle_win.ogg</code> · <code>jingle_defeat.ogg</code> · <code>jingle_stinger.ogg</code></td>
+              <td><span data-zh>胜负 / 转场音效</span><span data-en>Win / lose / stinger jingles</span></td>
+              <td>Kenney · kenney.nl</td>
+              <td><span class="tag-lic lic-cc0">CC0 1.0</span></td>
+            </tr>
+            <tr>
+              <td><code>audio/sfx/weapons/cz.wav</code> · <code>mosin.wav</code> · <code>shotty.wav</code> · <code>sks.wav</code></td>
+              <td><span data-zh>枪声</span><span data-en>Gun sounds</span></td>
+              <td>Vincent Sevedge · OpenGameArt</td>
+              <td><span class="tag-lic lic-cb">CC-BY 3.0</span></td>
+            </tr>
+            <tr>
+              <td><code>audio/sfx/weapons/boom_new.wav</code></td>
+              <td><span data-zh>爆炸</span><span data-en>Explosion</span></td>
+              <td>OpenGameArt</td>
+              <td><span class="tag-lic lic-cc0">CC0 1.0</span></td>
+            </tr>
+            <tr>
+              <td><code>audio/sfx/impact/*</code> · <code>mechanical/*</code></td>
+              <td><span data-zh>命中 / 换弹 / 机械音</span><span data-en>Impacts / reload / mechanical</span></td>
+              <td>Kenney · kenney.nl</td>
+              <td><span class="tag-lic lic-cc0">CC0 1.0</span></td>
+            </tr>
+            <tr>
+              <td><code>audio/sfx/vehicles/*</code></td>
+              <td><span data-zh>载具音效</span><span data-en>Vehicle SFX</span></td>
+              <td>Kenney · kenney.nl</td>
+              <td><span class="tag-lic lic-cc0">CC0 1.0</span></td>
+            </tr>
+            <tr>
+              <td><code>audio/sfx/ambience/s_bird_a.ogg</code></td>
+              <td><span data-zh>鸟鸣环境声</span><span data-en>Bird ambience</span></td>
+              <td>isaiah658 · OpenGameArt</td>
+              <td><span class="tag-lic lic-cc0">CC0 1.0</span></td>
+            </tr>
+            <tr>
+              <td><code>audio/sfx/voice_en/02._hostiles_inbound.wav</code> 等「Radio Soldier」播报组</td>
+              <td><span data-zh>英语无线电播报</span><span data-en>English radio announcements</span></td>
+              <td>SoundBiterSFX · OpenGameArt</td>
+              <td><span class="tag-lic lic-sa">CC-BY-SA 4.0</span></td>
+            </tr>
+            <tr>
+              <td><code>audio/sfx/voice_en/v_en_*.wav</code> · <code>battlecries.ogg</code> · <code>wounded.ogg</code></td>
+              <td><span data-zh>英语士兵语音</span><span data-en>English soldier voice</span></td>
+              <td>Bigz1983 · OpenGameArt</td>
+              <td><span class="tag-lic lic-cb">CC-BY 3.0</span></td>
+            </tr>
+            <tr>
+              <td><code>audio/sfx/voice_cn/*</code>（15 条）</td>
+              <td><span data-zh>中文播报语音</span><span data-en>Chinese announcer lines</span></td>
+              <td><span data-zh><strong>本项目自制</strong>（本地 TTS）</span><span data-en><strong>Own work</strong> (local TTS)</span></td>
+              <td><span class="tag-lic lic-mit" data-zh>自有</span><span class="tag-lic lic-mit" data-en>Own work</span></td>
+            </tr>
+            <tr>
+              <td><code>audio/kit/*</code>（9 条）</td>
+              <td><span data-zh>配方通用音效</span><span data-en>Recipe kit SFX</span></td>
+              <td><span data-zh><strong>本项目自制</strong>（程序化合成）</span><span data-en><strong>Own work</strong> (procedural)</span></td>
+              <td><span class="tag-lic lic-mit">MIT · <span data-zh>自有</span><span data-en>own work</span></span></td>
+            </tr>
+          </tbody>
+        </table>
+      </div>
+    </section>
+
+    <!-- 4 -->
+    <section id="assets">
+      <h2 data-zh>四、3D 模型与纹理</h2>
+      <h2 data-en>4. 3D models and textures</h2>
+      <div class="tbl-wrap">
+        <table>
+          <thead>
+            <tr>
+              <th><span data-zh>文件</span><span data-en>Files</span></th>
+              <th><span data-zh>内容</span><span data-en>Content</span></th>
+              <th><span data-zh>作者 / 来源</span><span data-en>Author / source</span></th>
+              <th><span data-zh>许可</span><span data-en>Licence</span></th>
+            </tr>
+          </thead>
+          <tbody>
+            <tr>
+              <td><code>models/soldier.glb</code></td>
+              <td><span data-zh>角色模型（含动画）</span><span data-en>Animated character</span></td>
+              <td>Quaternius</td>
+              <td><span class="tag-lic lic-cc0">CC0 1.0</span></td>
+            </tr>
+            <tr>
+              <td><code>models/rifle.glb</code></td>
+              <td><span data-zh>枪械模型</span><span data-en>Rifle model</span></td>
+              <td>Quaternius</td>
+              <td><span class="tag-lic lic-cc0">CC0 1.0</span></td>
+            </tr>
+            <tr>
+              <td><code>models/tank.glb</code></td>
+              <td><span data-zh>载具模型</span><span data-en>Vehicle model</span></td>
+              <td>Quaternius</td>
+              <td><span class="tag-lic lic-cc0">CC0 1.0</span></td>
+            </tr>
+            <tr>
+              <td><code>textures/sand_01_*.webp</code> · <code>rough_concrete_*</code> · <code>plywood_*</code> · <code>rusty_metal_*</code> · <code>corrugated_iron_*</code> · <code>rock_04_*</code></td>
+              <td><span data-zh>地面 / 墙面 PBR 纹理（diffuse + normal，共 12 张）</span><span data-en>Ground / wall PBR textures (diffuse + normal, 12 files)</span></td>
+              <td>AmbientCG</td>
+              <td><span class="tag-lic lic-cc0">CC0 1.0</span></td>
+            </tr>
+          </tbody>
+        </table>
+      </div>
+    </section>
+
+    <!-- 5 -->
+    <section id="oss">
+      <h2 data-zh>五、开源软件组件</h2>
+      <h2 data-en>5. Open-source components</h2>
+      <div class="tbl-wrap">
+        <table>
+          <thead>
+            <tr>
+              <th><span data-zh>组件</span><span data-en>Component</span></th>
+              <th><span data-zh>用途</span><span data-en>Purpose</span></th>
+              <th><span data-zh>许可</span><span data-en>Licence</span></th>
+            </tr>
+          </thead>
+          <tbody>
+            <tr><td><strong>three.js</strong></td><td><span data-zh>3D 渲染引擎</span><span data-en>3D rendering engine</span></td><td><span class="tag-lic lic-mit">MIT</span></td></tr>
+            <tr><td><strong>@dimforge/rapier3d</strong></td><td><span data-zh>物理引擎（WASM）</span><span data-en>Physics (WASM)</span></td><td><span class="tag-lic">Apache-2.0</span></td></tr>
+            <tr><td><strong>Draco</strong>（<code>3d/draco/</code>）</td><td><span data-zh>网格压缩解码器</span><span data-en>Mesh compression decoder</span></td><td><span class="tag-lic">Apache-2.0</span></td></tr>
+            <tr><td><strong>Basis Universal</strong>（<code>3d/basis/</code>）</td><td><span data-zh>纹理转码器</span><span data-en>Texture transcoder</span></td><td><span class="tag-lic">Apache-2.0</span></td></tr>
+            <tr><td><strong>Vite</strong></td><td><span data-zh>构建工具</span><span data-en>Build tool</span></td><td><span class="tag-lic lic-mit">MIT</span></td></tr>
+            <tr><td><strong>TypeScript</strong></td><td><span data-zh>类型检查</span><span data-en>Type checking</span></td><td><span class="tag-lic">Apache-2.0</span></td></tr>
+            <tr><td><strong>Playwright</strong></td><td><span data-zh>开发期测试（不随产品分发）</span><span data-en>Dev-time testing (not shipped)</span></td><td><span class="tag-lic">Apache-2.0</span></td></tr>
+            <tr><td><strong>@gltf-transform/*</strong></td><td><span data-zh>开发期资产转码</span><span data-en>Dev-time asset transcoding</span></td><td><span class="tag-lic lic-mit">MIT</span></td></tr>
+            <tr><td><strong>meshoptimizer</strong></td><td><span data-zh>开发期网格优化</span><span data-en>Dev-time mesh optimization</span></td><td><span class="tag-lic lic-mit">MIT</span></td></tr>
+            <tr><td><strong>sharp</strong></td><td><span data-zh>开发期图像处理</span><span data-en>Dev-time image processing</span></td><td><span class="tag-lic">Apache-2.0</span></td></tr>
+            <tr><td><strong>wrangler</strong></td><td><span data-zh>部署 CLI（不随产品分发）</span><span data-en>Deploy CLI (not shipped)</span></td><td><span class="tag-lic lic-mit">MIT OR Apache-2.0</span></td></tr>
+          </tbody>
+        </table>
+      </div>
+      <p data-zh>
+        MIT 义务：保留版权与许可文本。Apache-2.0 义务：保留版权、许可与 NOTICE（若有），并说明修改。
+        仓库内的权威清单为 <code>docs/THIRD_PARTY_NOTICES.md</code>。
+      </p>
+      <p data-en>
+        MIT: retain copyright and licence text. Apache-2.0: retain copyright, licence and NOTICE, and state modifications.
+        Authoritative list: <code>docs/THIRD_PARTY_NOTICES.md</code>.
+      </p>
+    </section>
+
+    <!-- 6 -->
+    <section id="sa">
+      <h2 data-zh>六、CC-BY-SA 4.0 与 ShareAlike 提示</h2>
+      <h2 data-en>6. CC-BY-SA 4.0 and ShareAlike</h2>
+      <p data-zh>
+        <code>audio/sfx/voice_en/</code> 中来自「Radio Soldier」（SoundBiterSFX）的录音为 <strong>CC-BY-SA 4.0</strong>。
+        本站将这些文件<strong>原样随构建分发</strong>，未做剪辑、变调或混音，因此只履行<strong>署名</strong>义务，
+        游戏其余部分（自有代码、自有素材、CC0 素材）<strong>不因此被传染</strong>为 CC-BY-SA。
+      </p>
+      <p data-en>
+        The “Radio Soldier” recordings are <strong>CC-BY-SA 4.0</strong>. We ship them <strong>as-is</strong>, so our only duty is attribution;
+        the rest of the game is not “infected”. If you <em>adapt</em> those files, your adaptation must be CC-BY-SA 4.0.
+      </p>
+      <div class="card-note warn">
+        <p data-zh>
+          <strong>不想承担 ShareAlike？</strong> 直接删除 <code>public/audio/sfx/voice_en/</code> 中来自 Radio Soldier 的 wav 文件，
+          或替换为 CC0 / 自有语音即可。其余素材（CC0）与全部代码（MIT）均无此约束。
+        </p>
+        <p data-en>
+          <strong>Prefer to avoid ShareAlike?</strong> Delete the Radio Soldier wavs under <code>public/audio/sfx/voice_en/</code>, or
+          replace them with CC0 / own voice lines. Everything else (CC0 assets, MIT code) carries no such condition.
+        </p>
+      </div>
+    </section>
+
+    <!-- 7 -->
+    <section id="reuse">
+      <h2 data-zh>七、在你的项目里复用</h2>
+      <h2 data-en>7. Reusing in your own project</h2>
+      <ul data-zh>
+        <li><strong>只用框架代码</strong>：保留 MIT 版权与许可文本即可，随便商用。</li>
+        <li><strong>用框架 + 自有素材</strong>：同上；你只需遵守 three.js / Rapier 等依赖的 MIT / Apache-2.0。</li>
+        <li><strong>直接复用完整演示构建</strong>：保留第二节的署名全文；若改编了 CC-BY-SA 语音，改编部分需以 CC-BY-SA 4.0 发布。</li>
+        <li><strong>品牌</strong>：MIT 不授予商标权，「Specul」「龙骨 Keel」「Keel 3D / 2D」不得用于暗示官方背书。</li>
+      </ul>
+      <ul data-en>
+        <li><strong>Framework only</strong>: keep the MIT notice; commercial use is fine.</li>
+        <li><strong>Framework + your own assets</strong>: same, plus three.js / Rapier terms.</li>
+        <li><strong>Reuse the full demo build</strong>: keep the attributions in section 2; adapted CC-BY-SA audio must stay CC-BY-SA 4.0.</li>
+        <li><strong>Brand</strong>: MIT grants no trademark rights — do not imply endorsement.</li>
+      </ul>
+      <div class="card-note">
+        <p data-zh>相关页面：<a href="https://specul.com/legal.html">法律条款</a> · <a href="./3d/hub.html">3D 演示</a> · <a href="https://github.com/lifeidle/keel3d" target="_blank" rel="noopener">源码仓库</a></p>
+        <p data-en>Related: <a href="https://specul.com/legal.html">Legal</a> · <a href="./3d/hub.html">3D demos</a> · <a href="https://github.com/lifeidle/keel3d" target="_blank" rel="noopener">Repository</a></p>
+      </div>
+    </section>
+  </main>
+
+  <footer class="site-footer">
+    <div class="container foot-row">
+      <div>
+        <div>© 2026 Specul · <span data-zh>投机 · 推演</span><span data-en>Speculation · Speculate</span></div>
+        <div class="foot-legal">
+          <details>
+            <summary><span data-zh>版权 · 免责 · 许可</span><span data-en>Copyright · Disclaimer · Licensing</span></summary>
+            <p data-zh>
+              本站自有文案、界面设计、标识与编排版权归 Specul 所有。龙骨 Keel 代码以仓库 <strong>MIT</strong> 许可发布；
+              在线演示中的第三方素材（CC0 / CC-BY / CC-BY-SA）权利归原作者，必需署名与完整清单见本页。
+              演示按「现状」提供，不构成任何担保或服务承诺；战斗类内容纯属虚构。
+            </p>
+            <p data-en>
+              Original copy, UI design, marks, and compilation are © Specul. Keel code is <strong>MIT</strong> per its
+              repository; third-party assets in the demos remain with their authors — see this page.
+              Demos are provided “as is”, are not a service commitment, and combat content is fictional.
+            </p>
+            <p>
+              <a href="https://specul.com/legal.html"><span data-zh>法律条款</span><span data-en>Legal</span></a> ·
+              <a href="./credits.html"><span data-zh>素材与致谢</span><span data-en>Credits</span></a>
+            </p>
+          </details>
+        </div>
+      </div>
+      <div class="foot-links">
+        <a href="https://specul.com/"><span data-zh>首页</span><span data-en>Home</span></a> ·
+        <a href="https://specul.com/nav.html"><span data-zh>导航</span><span data-en>Directory</span></a> ·
+        <a href="./">龙骨 Keel</a> ·
+        <a href="https://github.com/lifeidle/keel3d" target="_blank" rel="noopener">GitHub</a>
+      </div>
+    </div>
+  </footer>
+
+  <script src="brand.js" defer></script>
+</body>
+</html>

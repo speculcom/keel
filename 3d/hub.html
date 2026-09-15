@@ -5,11 +5,34 @@
   <meta name="viewport" content="width=device-width, initial-scale=1.0" />
   <title>KeeL 3D — 选品类 · 配基底 · 做游戏</title>
   <meta name="description" content="KeeL 3D（Specul）：WebGPU 三维游戏基座。选择 FPS / 塔防 / 开放世界 / 飞行 / 赛车等形式，查看开发基底与可玩样例。keel.specul.com" />
-  <meta name="theme-color" content="#0b1220" />
+  <meta name="theme-color" content="#05080f" />
   <link rel="icon" href="data:image/svg+xml,%3Csvg xmlns='http://www.w3.org/2000/svg' viewBox='0 0 64 64'%3E%3Crect width='64' height='64' rx='14' fill='%230b1220'/%3E%3Cpath d='M18 40 L32 16 L46 40 Z' fill='none' stroke='%236ec8ff' stroke-width='3'/%3E%3Ccircle cx='32' cy='36' r='4' fill='%23ffd27a'/%3E%3C/svg%3E" />
-  <style>:root{--bg:#0b1220;--bg2:#121a2b;--card:#162033;--card2:#1c2940;--line:#2a3a55;--ink:#e8eef7;--muted:#8fa3bc;--accent:#6ec8ff;--accent2:#ffd27a;--ok:#5dcea0;--warn:#f0a86a;--danger:#e07070;--radius:14px;--font:"Segoe UI", "PingFang SC", "Microsoft YaHei", system-ui, sans-serif;--mono:ui-monospace, "Cascadia Code", Consolas, monospace}*{box-sizing:border-box;margin:0;padding:0}html,body{height:100%}body{font-family:var(--font);background:radial-gradient(1200px 600px at 20% -10%, #1a2a48 0%, var(--bg) 55%);color:var(--ink);min-height:100%;line-height:1.55}a{color:var(--accent);text-decoration:none}a:hover{text-decoration:underline}.wrap{max-width:1100px;margin:0 auto;padding:36px 22px 80px}header.hero{margin-bottom:28px}.eyebrow{letter-spacing:.08em;text-transform:uppercase;color:var(--accent);border:1px solid var(--line);border-radius:999px;margin-bottom:14px;padding:4px 10px;font-size:12px;display:inline-block}h1{letter-spacing:-.02em;margin-bottom:10px;font-size:clamp(26px,4vw,38px);font-weight:650;line-height:1.2}.lede{color:var(--muted);max-width:52em;font-size:15px}.lede strong{color:var(--ink);font-weight:600}.flow{flex-wrap:wrap;gap:10px;margin:18px 0 8px;display:flex}.flow-step{background:var(--bg2);border:1px solid var(--line);color:var(--muted);border-radius:10px;padding:8px 12px;font-size:13px}.flow-step b{color:var(--accent2);margin-right:6px;font-weight:600}h2.section{align-items:center;gap:10px;margin:32px 0 14px;font-size:18px;font-weight:600;display:flex}h2.section:after{content:"";background:var(--line);flex:1;height:1px}.grid{grid-template-columns:repeat(auto-fill,minmax(240px,1fr));gap:14px;display:grid}.card{background:linear-gradient(180deg, var(--card) 0%, var(--card2) 100%);border:1px solid var(--line);border-radius:var(--radius);cursor:pointer;text-align:left;color:inherit;font:inherit;width:100%;padding:16px 16px 14px;transition:border-color .15s,transform .15s,box-shadow .15s}.card:hover,.card:focus-visible{border-color:var(--accent);outline:none;transform:translateY(-1px);box-shadow:0 8px 24px #00000040}.card.active{border-color:var(--accent);box-shadow:0 0 0 1px var(--accent), 0 10px 28px #6ec8ff1f}.card .icon{border:1px solid var(--line);background:#6ec8ff1a;border-radius:10px;place-items:center;width:42px;height:42px;margin-bottom:12px;font-size:20px;display:grid}.card h3{margin-bottom:4px;font-size:16px;font-weight:600}.card p{color:var(--muted);min-height:2.6em;margin-bottom:10px;font-size:13px}.tags{flex-wrap:wrap;gap:6px;display:flex}.tag{color:var(--muted);border:1px solid var(--line);background:#00000026;border-radius:999px;padding:2px 8px;font-size:11px}.detail{background:var(--card);border:1px solid var(--line);border-radius:var(--radius);margin-top:18px;overflow:hidden}.detail-head{border-bottom:1px solid var(--line);flex-wrap:wrap;justify-content:space-between;align-items:flex-start;gap:12px;padding:18px 20px 12px;display:flex}.detail-head h3{margin-bottom:4px;font-size:20px}.detail-head .sub{color:var(--muted);font-size:13px}.actions{flex-wrap:wrap;gap:8px;display:flex}.btn{border:1px solid var(--line);background:var(--bg2);color:var(--ink);cursor:pointer;border-radius:10px;align-items:center;gap:6px;padding:9px 14px;font-size:13px;font-weight:600;text-decoration:none;display:inline-flex}.btn:hover{border-color:var(--accent);text-decoration:none}.btn.primary{color:#fff;background:linear-gradient(#3d9fd4,#2a7fb8);border-color:#0000}.btn.primary:hover{filter:brightness(1.08)}.btn code{font-family:var(--mono);font-size:12px;font-weight:500}.detail-body{grid-template-columns:1.1fr 1fr;gap:0;display:grid}@media (width<=800px){.detail-body{grid-template-columns:1fr}}.panel{padding:16px 20px 20px}.panel+.panel{border-left:1px solid var(--line)}@media (width<=800px){.panel+.panel{border-left:none;border-top:1px solid var(--line)}}.panel h4{text-transform:uppercase;letter-spacing:.06em;color:var(--muted);margin-bottom:12px;font-size:12px}.kv{gap:8px;display:grid}.kv-row{border-bottom:1px dashed #2a3a55b3;grid-template-columns:88px 1fr;gap:10px;padding:8px 0;font-size:13px;display:grid}.kv-row:last-child{border-bottom:none}.kv-row dt{color:var(--muted)}.kv-row dd{color:var(--ink)}.block-list{gap:8px;list-style:none;display:grid}.block-list li{border:1px solid var(--line);background:#0000002e;border-radius:10px;align-items:flex-start;gap:10px;padding:10px 12px;font-size:13px;display:flex}.block-list li b{font-family:var(--mono);color:var(--accent);min-width:7.5em;font-size:12px}.block-list li span{color:var(--muted);flex:1}.cmd{border:1px solid var(--line);font-family:var(--mono);color:#b8e0a8;white-space:nowrap;background:#0a101c;border-radius:10px;margin-top:12px;padding:10px 12px;font-size:12px;overflow-x:auto}.cmd .copy-hint{float:right;color:var(--muted);font-family:var(--font);margin-left:12px;font-size:11px}.note{color:var(--muted);border-left:3px solid var(--line);margin-top:16px;padding-left:12px;font-size:12px}.note strong{color:var(--warn);font-weight:600}footer{border-top:1px solid var(--line);color:var(--muted);flex-wrap:wrap;justify-content:space-between;gap:12px 20px;margin-top:40px;padding-top:18px;font-size:12px;display:flex}.toast{border:1px solid var(--accent);color:var(--ink);opacity:0;pointer-events:none;z-index:50;background:#1a283f;border-radius:999px;padding:10px 18px;font-size:13px;transition:opacity .2s,transform .2s;position:fixed;bottom:24px;left:50%;transform:translate(-50%)translateY(20px)}.toast.show{opacity:1;transform:translate(-50%)translateY(0)}</style>
+  <!-- 全站统一品牌外壳。用站点根绝对路径引用：dev 下由 public/brand.css 提供，
+       构建后 Vite 会按 base('./') 重写成 ./brand.css，两种情况下都能命中。 -->
+  <link rel="stylesheet" href="./brand.css" />
+  <style>:root{--bg:#05080f;--bg2:#0a101c;--card:#0d1524;--card2:#121b2c;--line:#94a3b824;--ink:#f4f7fb;--muted:#94a3b8;--accent:#22d3c5;--accent2:#f5c542;--ok:#5dcea0;--warn:#f0a86a;--danger:#e07070;--radius:14px;--font:"Segoe UI", "PingFang SC", "Microsoft YaHei", system-ui, sans-serif;--mono:ui-monospace, "Cascadia Code", Consolas, monospace}*{box-sizing:border-box;margin:0;padding:0}html,body{height:100%}body{font-family:var(--font);background:var(--bg);color:var(--ink);min-height:100%;line-height:1.55}a{color:var(--accent);text-decoration:none}a:hover{text-decoration:underline}[data-theme=light]{--bg:#f4f7fb;--bg2:#eef3fa;--card:#fff;--card2:#f7fafc;--line:#0f172a1f;--ink:#0f172a;--muted:#5b6b82;--accent2:#a16207}.wrap{width:var(--container);margin:0 auto;padding:36px 0 72px}header.hero{margin-bottom:28px}.eyebrow{letter-spacing:.08em;text-transform:uppercase;color:var(--accent);border:1px solid var(--line);border-radius:999px;margin-bottom:14px;padding:4px 10px;font-size:12px;display:inline-block}h1{letter-spacing:-.02em;margin-bottom:10px;font-size:clamp(26px,4vw,38px);font-weight:650;line-height:1.2}.lede{color:var(--muted);max-width:52em;font-size:15px}.lede strong{color:var(--ink);font-weight:600}.flow{flex-wrap:wrap;gap:10px;margin:18px 0 8px;display:flex}.flow-step{background:var(--bg2);border:1px solid var(--line);color:var(--muted);border-radius:10px;padding:8px 12px;font-size:13px}.flow-step b{color:var(--accent2);margin-right:6px;font-weight:600}.doclinks{color:var(--muted);flex-wrap:wrap;align-items:center;gap:14px;margin-top:12px;font-size:12.5px;display:flex}.doclinks a{color:var(--muted);border-bottom:1px solid var(--line)}.doclinks a:hover{color:var(--accent);border-bottom-color:var(--accent);text-decoration:none}h2.section{align-items:center;gap:10px;margin:32px 0 14px;font-size:18px;font-weight:600;display:flex}h2.section:after{content:"";background:var(--line);flex:1;height:1px}.grid{grid-template-columns:repeat(auto-fill,minmax(240px,1fr));gap:14px;display:grid}.card{background:linear-gradient(180deg, var(--card) 0%, var(--card2) 100%);border:1px solid var(--line);border-radius:var(--radius);cursor:pointer;text-align:left;color:inherit;font:inherit;width:100%;padding:16px 16px 14px;transition:border-color .15s,transform .15s,box-shadow .15s}.card:hover,.card:focus-visible{border-color:var(--accent);outline:none;transform:translateY(-1px);box-shadow:0 8px 24px #00000040}.card.active{border-color:var(--accent);box-shadow:0 0 0 1px var(--accent), 0 10px 28px #22d3c51f}.card .icon{border:1px solid var(--line);background:#22d3c51a;border-radius:10px;place-items:center;width:42px;height:42px;margin-bottom:12px;font-size:20px;display:grid}.card h3{margin-bottom:4px;font-size:16px;font-weight:600}.card p{color:var(--muted);min-height:2.6em;margin-bottom:10px;font-size:13px}.tags{flex-wrap:wrap;gap:6px;display:flex}.tag{color:var(--muted);border:1px solid var(--line);background:#00000026;border-radius:999px;padding:2px 8px;font-size:11px}.detail{background:var(--card);border:1px solid var(--line);border-radius:var(--radius);margin-top:18px;overflow:hidden}.detail-head{border-bottom:1px solid var(--line);flex-wrap:wrap;justify-content:space-between;align-items:flex-start;gap:12px;padding:18px 20px 12px;display:flex}.detail-head h3{margin-bottom:4px;font-size:20px}.detail-head .sub{color:var(--muted);font-size:13px}.actions{flex-wrap:wrap;gap:8px;display:flex}.btn{border:1px solid var(--line);background:var(--bg2);color:var(--ink);cursor:pointer;border-radius:10px;align-items:center;gap:6px;padding:9px 14px;font-size:13px;font-weight:600;text-decoration:none;display:inline-flex}.btn:hover{border-color:var(--accent);text-decoration:none}.btn.primary{color:#fff;background:linear-gradient(135deg,#a78bfa,#22d3c5);border-color:#0000}.btn.primary:hover{filter:brightness(1.08)}.btn code{font-family:var(--mono);font-size:12px;font-weight:500}.detail-body{grid-template-columns:1.1fr 1fr;gap:0;display:grid}@media (width<=800px){.detail-body{grid-template-columns:1fr}}.panel{padding:16px 20px 20px}.panel+.panel{border-left:1px solid var(--line)}@media (width<=800px){.panel+.panel{border-left:none;border-top:1px solid var(--line)}}.panel h4{text-transform:uppercase;letter-spacing:.06em;color:var(--muted);margin-bottom:12px;font-size:12px}.kv{gap:8px;display:grid}.kv-row{border-bottom:1px dashed #94a3b82e;grid-template-columns:88px 1fr;gap:10px;padding:8px 0;font-size:13px;display:grid}.kv-row:last-child{border-bottom:none}.kv-row dt{color:var(--muted)}.kv-row dd{color:var(--ink)}.block-list{gap:8px;list-style:none;display:grid}.block-list li{border:1px solid var(--line);background:#0000002e;border-radius:10px;align-items:flex-start;gap:10px;padding:10px 12px;font-size:13px;display:flex}.block-list li b{font-family:var(--mono);color:var(--accent);min-width:7.5em;font-size:12px}.block-list li span{color:var(--muted);flex:1}.cmd{border:1px solid var(--line);font-family:var(--mono);color:#b8e0a8;white-space:nowrap;background:#0a101c;border-radius:10px;margin-top:12px;padding:10px 12px;font-size:12px;overflow-x:auto}.cmd .copy-hint{float:right;color:var(--muted);font-family:var(--font);margin-left:12px;font-size:11px}.note{color:var(--muted);border-left:3px solid var(--line);margin-top:16px;padding-left:12px;font-size:12px}.note strong{color:var(--warn);font-weight:600}footer{border-top:1px solid var(--line);color:var(--muted);flex-wrap:wrap;justify-content:space-between;gap:12px 20px;margin-top:40px;padding-top:18px;font-size:12px;display:flex}.toast{border:1px solid var(--accent);color:var(--ink);opacity:0;pointer-events:none;z-index:50;background:#1a283f;border-radius:999px;padding:10px 18px;font-size:13px;transition:opacity .2s,transform .2s;position:fixed;bottom:24px;left:50%;transform:translate(-50%)translateY(20px)}.toast.show{opacity:1;transform:translate(-50%)translateY(0)}</style>
 </head>
-<body>
+<body class="brand-ambient">
+  <header class="site-header">
+    <div class="container site-bar">
+      <a class="brand" href="https://keel.specul.com/" title="龙骨 Keel">
+        <span class="brand-dot" aria-hidden="true"></span>
+        <span class="brand-name">KEEL</span>
+        <span class="brand-sub" id="markSub"
+              data-zh-sub="3D · 游戏基座" data-en-sub="3D · game framework">3D · 游戏基座</span>
+      </a>
+      <nav class="nav-links" aria-label="站点导航">
+        <a href="https://specul.com/">首页</a>
+        <a href="https://specul.com/nav.html">导航</a>
+        <a href="https://keel.specul.com/">龙骨 Keel</a>
+        <a href="./hub.html">3D 演示</a>
+        <a href="https://specul.com/legal.html">法律</a>
+        <button class="icon-btn" id="themeBtn" type="button" aria-label="切换明暗主题">☾</button>
+        <button class="icon-btn" id="langBtn" type="button" aria-label="Switch language">EN</button>
+      </nav>
+    </div>
+  </header>
+
   <div class="wrap">
     <header class="hero">
       <div class="eyebrow">KeeL 3D · Specul · WebGPU · <a href="https://github.com/lifeidle/keel3d" target="_blank" rel="noopener">GitHub</a></div>
@@ -25,6 +48,13 @@
         <div class="flow-step"><b>2</b>查看基底与积木</div>
         <div class="flow-step"><b>3</b>npm run new-game -- --recipe</div>
         <div class="flow-step"><b>4</b>只 import 你需要的模块</div>
+      </div>
+      <div class="doclinks">
+        <span>文档：</span>
+        <a href="https://github.com/lifeidle/keel3d#readme">README</a>
+        <a href="https://github.com/lifeidle/keel3d/blob/master/docs/QUICKSTART.md">Quickstart</a>
+        <a href="https://github.com/lifeidle/keel3d/blob/master/docs/BLOCKS.md">积木手册</a>
+        <a href="https://github.com/lifeidle/keel3d/blob/master/docs/RECIPES.md">配方说明</a>
       </div>
     </header>
 
@@ -75,17 +105,38 @@
       </div>
     </div>
 
-    <footer>
-      <span>MIT · KeeL 3D · <a href="https://keel.specul.com">keel.specul.com</a> · 需 WebGPU 浏览器</span>
-      <span>
-        <a href="https://github.com/lifeidle/keel3d#readme">README</a> ·
-        <a href="https://github.com/lifeidle/keel3d/blob/master/docs/QUICKSTART.md">Quickstart</a> ·
-        <a href="https://github.com/lifeidle/keel3d/blob/master/docs/BLOCKS.md">积木手册</a> · <a href="https://github.com/lifeidle/keel3d/blob/master/docs/RECIPES.md">配方说明</a>
-      </span>
+    <footer class="site-footer">
+      <div class="container foot-row">
+        <div>
+          <div>© 2026 Specul · 投机 · 推演</div>
+          <div class="foot-legal">
+            <details>
+              <summary>版权 · 免责 · 许可</summary>
+              <p>
+                本站自有文案、界面设计与编排版权归 Specul 所有。龙骨 Keel 代码以仓库 <strong>MIT</strong> 许可发布；
+                在线演示中的第三方素材（CC0 / CC-BY / CC-BY-SA）权利归原作者，必需署名与完整清单见「素材与致谢」。
+                演示按「现状」提供，不构成任何担保或服务承诺；战斗类内容纯属虚构。
+              </p>
+              <p>
+                <a href="https://specul.com/legal.html">法律条款</a> ·
+                <a href="https://keel.specul.com/credits.html">素材与致谢</a>
+              </p>
+            </details>
+          </div>
+        </div>
+        <div class="foot-links">
+          <a href="https://specul.com/">首页</a> ·
+          <a href="https://specul.com/nav.html">导航</a> ·
+          <a href="https://keel.specul.com/">龙骨 Keel</a> ·
+          <a href="https://github.com/lifeidle/keel3d" target="_blank" rel="noopener">GitHub</a>
+        </div>
+      </div>
     </footer>
   </div>
 
   <div class="toast" id="toast">已复制</div>
+
+  <script src="./brand.js" defer></script>
 
   <script>
     /** @type {Array<any>} */
